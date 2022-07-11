@@ -33,6 +33,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@micro-stacks/svelte": "^1.0.0-beta.2"
+		"@micro-stacks/svelte": "^1.0.0-beta.2",
+		"svelte-kit-cookie-session": "^3.0.6"
 	}
 }
