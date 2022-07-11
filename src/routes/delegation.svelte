@@ -1,5 +1,4 @@
 <script lang="ts">
-	import 'carbon-components-svelte/css/all.css';
 	import { Content, Grid, Row, Column } from 'carbon-components-svelte';
 	import PageHeader from '../components/page-header.svelte';
 	import WalletConnectButton from '../components/wallet-connect-button.svelte';

@@ -1,7 +1,8 @@
 <script lang="ts">
 	import {
 		Header,
-		Link,
+		HeaderNav,
+		HeaderNavItem,
 		SkipToContent,
 		SideNav,
 		SideNavItems,
@@ -9,21 +10,44 @@
 	} from 'carbon-components-svelte';
 
 	let isSideNavOpen = false;
+
+	const navOptions = [
+		{
+			href: '/membership',
+			text: 'Membership'
+		},
+		{
+			href: '/proposal',
+			text: 'Proposal'
+		},
+		{
+			href: '/voting',
+			text: 'Voting'
+		},
+		{
+			href: '/delegation',
+			text: 'Delegation'
+		}
+	];
 </script>
 
-<Header bind:isSideNavOpen>
-	<div slot="skip-to-content">
+<Header persistentHamburgerMenu={true} bind:isSideNavOpen>
+	<svelte:fragment slot="skip-to-content">
 		<SkipToContent />
-	</div>
+	</svelte:fragment>
 	<div slot="platform"><a href="/">STX Ecosystem DAO</a></div>
+	<HeaderNav>
+		{#each navOptions as { href, text }}
+			<HeaderNavItem {href} {text} />
+		{/each}
+	</HeaderNav>
 </Header>
 
 <SideNav bind:isOpen={isSideNavOpen}>
 	<SideNavItems>
-		<SideNavLink href="/membership" text="Membership" />
-		<SideNavLink href="/proposal" text="Proposal" />
-		<SideNavLink href="/voting" text="Voting" />
-		<SideNavLink href="/delegation" text="Delegation" />
+		{#each navOptions as { href, text }}
+			<SideNavLink {href}>{text}</SideNavLink>
+		{/each}
 	</SideNavItems>
 </SideNav>
 

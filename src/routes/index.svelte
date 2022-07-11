@@ -22,7 +22,8 @@
 <style>
 	:global(#main-content.bx--content) {
 		background: none;
+		margin: 0;
+		padding: 0;
 		margin-top: 3rem;
-		padding-top: 0;
 	}
 </style>
