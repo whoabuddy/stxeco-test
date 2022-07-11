@@ -1,38 +1,44 @@
-# create-svelte
+# STX Ecosystem DAO
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+Svelte Front-end
 
-## Creating a project
+This is a test repo using [svelte](https://svelte.dev/) and [micro-stacks](https://github.com/fungible-systems/micro-stacks).
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Initial Setup
 
-```bash
-# create a new project in the current directory
-npm init svelte
+**Note:** This step does not need to be completed again, but documenting it her to be thorough.
 
-# create a new project in my-app
-npm init svelte my-app
+```
+npm init svelte stxeco-test
+
+✔ Which Svelte app template? › Skeleton project
+✔ Add type checking with TypeScript? › Yes, using TypeScript syntax
+✔ Add ESLint for code linting? … Yes
+✔ Add Prettier for code formatting? … Yes
+✔ Add Playwright for browser testing? … Yes
 ```
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
+```
+cd stxeco-test
+npm install
 npm run dev -- --open
 ```
 
-## Building
+Confirmed: "Welcome to SvelteKit"
 
-To create a production version of your app:
-
-```bash
-npm run build
+```
+npm install @micro-stacks/svelte@beta
+git init
+git branch -m main
+git commit -m "first commit" -m "Includes skeleton project built with SvelteKit and just installed micro-stacks as dependency via NPM."
+npm install --save svelte-kit-cookie-session
 ```
 
-You can preview the production build with `npm run preview`.
+Found the additional dependency at the end after comparing the [micro-stacks svelte example](https://github.com/fungible-systems/micro-stacks-examples/tree/main/examples/with-sveltekit) package.json with the test directory. From that point, all the code used in the example was copied over as a starting point.
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+## Development
+
+```bash
+npm install
+npm run dev -- --open
+```
