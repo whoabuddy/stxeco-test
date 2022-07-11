@@ -1,12 +1,13 @@
 <script lang="ts">
+	import { Button } from 'carbon-components-svelte';
 	import { getAccount, getAuth } from '@micro-stacks/svelte';
 	const auth = getAuth();
 	let response: any;
 	$: label = $auth.isRequestPending
 		? 'Loading...'
 		: $auth.isSignedIn
-		? 'Sign out'
-		: 'Connect Stacks wallet';
+		? 'Sign Out'
+		: 'Connect Stacks Wallet';
 	function onClick() {
 		if ($auth.isSignedIn) {
 			$auth.signOut();
@@ -20,9 +21,10 @@
 
 <main>
 	<h2>{sessionStatus}</h2>
-	<button on:click={onClick}>
+
+	<Button size="small" on:click={onClick}>
 		{label}
-	</button>
+	</Button>
 
 	{#if response}
 		<pre>

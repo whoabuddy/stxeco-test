@@ -11,8 +11,9 @@
 	import { mountClient } from '@micro-stacks/svelte';
 	import { onPersistState, onSignOut } from '../common/fetchers';
 	export let dehydratedState: string | undefined;
+	// TODO: update appIconUrl once identified
 	mountClient({
-		appName: 'svelte',
+		appName: 'STX-ECO-DAO',
 		appIconUrl: '/',
 		onPersistState,
 		onSignOut,

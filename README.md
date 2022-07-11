@@ -36,6 +36,18 @@ npm install --save svelte-kit-cookie-session
 
 Found the additional dependency at the end after comparing the [micro-stacks svelte example](https://github.com/fungible-systems/micro-stacks-examples/tree/main/examples/with-sveltekit) package.json with the test directory. From that point, all the code used in the example was copied over as a starting point.
 
+## Carbon Components Library
+
+Testing out [Carbon Components Svelte](https://carbon-components-svelte.onrender.com/) library for styling.
+
+```
+npm install -D carbon-components-svelte
+```
+
+Main layout with header and side navigation added to `src/routes/index.svelte` as an example.
+
+Button used in `WalletConnectButton` also styled as an example.
+
 ## Development
 
 ```bash
