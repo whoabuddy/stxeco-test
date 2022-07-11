@@ -11,18 +11,10 @@
 	<Grid>
 		<Row>
 			<Column>
-				<h1>Home</h1>
+				<h1>Membership</h1>
 				<hr />
 				<WalletConnectButton />
 			</Column>
 		</Row>
 	</Grid>
 </Content>
-
-<style>
-	:global(#main-content.bx--content) {
-		background: none;
-		margin-top: 3rem;
-		padding-top: 0;
-	}
-</style>
