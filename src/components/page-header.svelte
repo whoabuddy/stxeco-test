@@ -3,13 +3,21 @@
 		Header,
 		HeaderNav,
 		HeaderNavItem,
+		HeaderUtilities,
 		SkipToContent,
 		SideNav,
 		SideNavItems,
-		SideNavLink
+		SideNavLink,
+		Theme
 	} from 'carbon-components-svelte';
 
+	// TODO fix the hack: definition added here because
+	// I was unable to pull it from the actual location:
+	// node_modules/carbon-components-svelte/types/Theme/Theme.svelte.d.ts
+	type CarbonTheme = 'white' | 'g10' | 'g80' | 'g90' | 'g100';
+
 	let isSideNavOpen = false;
+	let theme: CarbonTheme = 'g90';
 
 	const navOptions = [
 		{
@@ -41,6 +49,21 @@
 			<HeaderNavItem {href} {text} />
 		{/each}
 	</HeaderNav>
+	<HeaderUtilities>
+		<Theme
+			bind:theme
+			persist
+			persistKey="__carbon-theme"
+			render="toggle"
+			toggle={{
+				themes: ['white', 'g90'],
+				labelA: '🌞',
+				labelB: '🌙',
+				hideLabel: true,
+				size: 'sm'
+			}}
+		/>
+	</HeaderUtilities>
 </Header>
 
 <SideNav bind:isOpen={isSideNavOpen}>
